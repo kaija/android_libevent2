@@ -444,6 +444,7 @@ arc4random_stir(void)
 }
 #endif
 
+#ifndef __ANDROID__
 #ifndef ARC4RANDOM_NOADDRANDOM
 ARC4RANDOM_EXPORT void
 arc4random_addrandom(const unsigned char *dat, int datlen)
@@ -461,6 +462,7 @@ arc4random_addrandom(const unsigned char *dat, int datlen)
 	}
 	_ARC4_UNLOCK();
 }
+#endif
 #endif
 
 #ifndef ARC4RANDOM_NORANDOM
